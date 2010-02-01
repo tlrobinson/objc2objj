@@ -37,6 +37,10 @@ org.antlr.global = (function() {
     return this;
 }).call(null);
 
+// HACK: (tlrobinson) unsure why namespace doesn't work correctly here.
+org.antlr.runtime = {}
+org.antlr.runtime.tree = {}
+
 /**
  * Returns the namespace specified and creates it if it doesn't exist.
  *

@@ -22,6 +22,9 @@ org.antlr.runtime.ANTLRFileStream = function(fileName, encoding) {
     var method;
     if (typeof java !== "undefined") { // rhino
         method = "loadFileUsingJava";
+    }
+    else if (typeof require !== "undefined") { // CommonJS
+        method = "loadFileUsingCommonJS";
     } else {
         throw new Error(
             "ANTLR File I/O is not supported in this JS implementation."
@@ -59,5 +62,8 @@ org.antlr.lang.extend(org.antlr.runtime.ANTLRFileStream,
             data.push(String.fromCharCode(charCode));
         }
         return data.join("");
+    },
+    loadFileUsingCommonJS: function(fileName, encoding) {
+        require("file").read(fileName, { charset : (encoding || "UTF-8") });
     }
 });
