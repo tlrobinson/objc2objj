@@ -1,0 +1,6 @@
+{
+    "name": "objc2objj",
+    "version": "0.0.1",
+    "description": "Objective-C to Objective-J compiler",
+    "keywords": ["Objective-C", "Objective-J", "compiler"]
+}
