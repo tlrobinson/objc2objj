@@ -9,6 +9,7 @@
 
 grammar ObjectiveC2ansi;
 options {
+  language=JavaScript;
   backtrack=true;
   output=AST;
 }
